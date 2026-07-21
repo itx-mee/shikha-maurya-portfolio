@@ -87,7 +87,7 @@ const PROJECTS = [
     description:
       "A modern full-stack blogging platform with secure authentication, protected routes, CRUD functionality, rich text editing, image uploads, and responsive UI.",
     tech: ["React.js", "Redux Toolkit", "Appwrite", "React Router", "Tailwind CSS"],
-    github: "#",
+    github: "https://github.com/itx-mee/React-Projects/tree/main/12_blogApp",
     demo: "#",
     gradient: "from-orange-500/30 via-fuchsia-500/20 to-indigo-500/30",
   },
