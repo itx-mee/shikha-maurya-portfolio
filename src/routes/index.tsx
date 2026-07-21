@@ -25,13 +25,13 @@ export const Route = createFileRoute("/")({
 
 // ---------- Data ----------
 const LINKS = {
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
-  leetcode: "https://leetcode.com/",
-  email: "shikha.maurya@example.com",
-  phone: "+91 00000 00000",
+  github: "https://github.com/itx-mee",
+  linkedin: "https://www.linkedin.com/in/shikha-maurya-25754322b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  leetcode: "https://leetcode.com/u/shikha-maurya/",
+  email: "mauryashikha903@gmail.com",
+  phone: "+91 6390723007",
   location: "India",
-  resume: "#",
+  resume: "https://drive.google.com/file/d/1BgyNA82iJRctSHBCdbJ6NXRhRxrT5SHJ/view?usp=drive_link",
 };
 
 const NAV = [
