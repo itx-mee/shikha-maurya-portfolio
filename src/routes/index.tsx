@@ -891,10 +891,10 @@ function Footer() {
           Built with <span className="text-brand">♥</span> using React · TanStack · Tailwind CSS · Motion
         </p>
         <div className="flex gap-2">
-          <a href={LINKS.github} aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
+          <a href={LINKS.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
             <Github className="h-4 w-4" />
           </a>
-          <a href={LINKS.linkedin} aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
+          <a href={LINKS.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
             <Linkedin className="h-4 w-4" />
           </a>
           <a href={`mailto:${LINKS.email}`} aria-label="Email" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
