@@ -397,9 +397,9 @@ function Hero() {
           <Reveal delay={0.25}>
             <div className="mt-8 flex flex-wrap items-center gap-2">
               {[
-                { icon: Github, href: LINKS.github, label: "GitHub" },
-                { icon: Linkedin, href: LINKS.linkedin, label: "LinkedIn" },
-                { icon: Code2, href: LINKS.leetcode, label: "LeetCode" },
+                { icon: Github, href: LINKS.github, label: "GitHub", external: true },
+                { icon: Linkedin, href: LINKS.linkedin, label: "LinkedIn", external: true },
+                { icon: Code2, href: LINKS.leetcode, label: "LeetCode", external: true },
                 { icon: Mail, href: `mailto:${LINKS.email}`, label: "Email" },
                 { icon: Phone, href: `tel:${LINKS.phone}`, label: "Phone" },
               ].map((s) => (
@@ -407,6 +407,8 @@ function Hero() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target={s.external ? "_blank" : undefined}
+                  rel={s.external ? "noopener noreferrer" : undefined}
                   className="group grid h-10 w-10 place-items-center rounded-xl glass transition-transform hover:-translate-y-0.5 hover:text-brand"
                 >
                   <s.icon className="h-4 w-4" />
