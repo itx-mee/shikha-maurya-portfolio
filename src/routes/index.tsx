@@ -718,13 +718,24 @@ function Awards() {
 }
 
 function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1000);
-    setTimeout(() => setStatus("idle"), 3500);
+    try {
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current);
+      setStatus("sent");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
+    setTimeout(() => setStatus("idle"), 4000);
   };
+
   return (
     <section id="contact" className="relative py-24">
       <div className="mx-auto max-w-6xl px-4">
@@ -767,7 +778,7 @@ function Contact() {
             </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <form onSubmit={onSubmit} className="glass h-full rounded-3xl p-6">
+            <form ref={formRef} onSubmit={onSubmit} className="glass h-full rounded-3xl p-6">
               <h3 className="font-display text-lg font-semibold">Send a message</h3>
               <div className="mt-5 grid gap-3">
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -803,6 +814,11 @@ function Contact() {
                     {status === "sent" && (
                       <motion.span key="d" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="inline-flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4" /> Sent!
+                      </motion.span>
+                    )}
+                    {status === "error" && (
+                      <motion.span key="e" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="inline-flex items-center gap-2">
+                        <AlertCircle className="h-4 w-4" /> Failed — try again
                       </motion.span>
                     )}
                   </AnimatePresence>
