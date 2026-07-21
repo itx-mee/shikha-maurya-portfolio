@@ -388,6 +388,8 @@ function Hero() {
               </a>
               <a
                 href={LINKS.resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
               >
                 <Download className="h-4 w-4" /> Download Resume
