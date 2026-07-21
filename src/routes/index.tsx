@@ -429,7 +429,7 @@ function Hero() {
               <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand/50 via-brand-2/40 to-brand-3/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] glass p-2">
                 <img
-                  src={profileImg}
+                  src={profileAsset.url}
                   alt="Shikha Maurya"
                   width={1024}
                   height={1024}
