@@ -531,10 +531,10 @@ function Projects() {
                   <div className="relative flex items-start justify-between gap-3">
                     <h3 className="font-display text-xl font-semibold">{p.title}</h3>
                     <div className="flex gap-2">
-                      <a href={p.github} aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                      <a href={p.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <Github className="h-4 w-4" />
                       </a>
-                      <a href={p.demo} aria-label="Live demo" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                      <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </div>
