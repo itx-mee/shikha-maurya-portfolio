@@ -570,6 +570,8 @@ function Projects() {
                 </p>
                 <a
                   href={LINKS.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-medium hover:text-brand"
                 >
                   <Github className="h-4 w-4" /> Visit GitHub
