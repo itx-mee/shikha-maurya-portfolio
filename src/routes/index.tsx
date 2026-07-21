@@ -840,12 +840,16 @@ function Resume() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
                     href={LINKS.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-brand-2 px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-lg shadow-brand/30"
                   >
                     <Download className="h-4 w-4" /> Download Resume
                   </a>
                   <a
                     href={LINKS.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium"
                   >
                     <ExternalLink className="h-4 w-4" /> Open PDF
