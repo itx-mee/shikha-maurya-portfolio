@@ -1,13 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, useRef, type FormEvent } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
+import emailjs from "@emailjs/browser";
 import {
   Github, Linkedin, Mail, Phone, MapPin, Download, Send, ExternalLink,
   Moon, Sun, Code2, Briefcase, GraduationCap, Award, User, Wrench,
   FileText, ArrowUpRight, Sparkles, Trophy, Rocket, Calendar,
-  CheckCircle2, Menu, X,
+  CheckCircle2, Menu, X, AlertCircle,
 } from "lucide-react";
 import profileAsset from "@/assets/shikha-profile.png.asset.json";
+
+// EmailJS configuration (public credentials — safe in client bundle)
+const EMAILJS_PUBLIC_KEY = "1TGrJ4Mi9e4ijmPwY";
+const EMAILJS_TEMPLATE_ID = "template_ueacc4y";
+const EMAILJS_SERVICE_ID = "service_5z7nva7";
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
