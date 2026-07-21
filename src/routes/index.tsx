@@ -56,7 +56,7 @@ const NAV = [
 ];
 
 const ROLES = [
-  "Robotic Process Automation Consultant",
+  "Robotic Process Automation Developer",
   "UiPath Developer",
   "API Integration Specialist",
   "Automation Engineer",
@@ -116,11 +116,26 @@ const EDUCATION = [
     title: "Bachelor of Technology",
     subtitle: "Electronics & Communication Engineering",
     org: "G.B. Pant Government Engineering College",
+    location: "New Delhi",
     meta: "CGPA: 8.6 / 10",
     duration: "2021 – 2025",
   },
-  { title: "Higher Secondary", subtitle: "Class XII", org: "", meta: "92.6%", duration: "" },
-  { title: "Secondary", subtitle: "Class X", org: "", meta: "89.4%", duration: "" },
+  {
+    title: "Higher Secondary",
+    subtitle: "Class XII",
+    org: "Deoria senior secondary school (CBSE)",
+    location: "Deoria, U.P.",
+    meta: "92.6%",
+    duration: "",
+  },
+  {
+    title: "Secondary",
+    subtitle: "Class X",
+    org: "Gurukul Mission (CBSE)",
+    location: "Deoria, U.P.",
+    meta: "89.4%",
+    duration: "",
+  },
 ];
 
 const AWARDS = [
@@ -380,7 +395,7 @@ function Hero() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              A passionate <span className="text-foreground">Robotic Process Automation Consultant</span> specializing in
+              A passionate <span className="text-foreground">Robotic Process Automation Developer</span> specializing in
               enterprise automation, API integrations, and scalable workflow solutions. Experienced in
               migrating large-scale hospitality systems to <span className="text-foreground">Oracle OPERA Cloud</span>,
               optimizing automation performance, and building reliable production-grade services. Deeply
@@ -489,11 +504,17 @@ function Works() {
           <div className="space-y-10">
             {WORKS.map((w, i) => (
               <Reveal key={w.role + i} delay={i * 0.05}>
-                <div className={`relative md:grid md:grid-cols-2 md:gap-8 ${i % 2 ? "md:[&>*:first-child]:col-start-2" : ""}`}>
+                <div className="relative md:grid md:grid-cols-2 md:gap-8">
                   <div className="absolute left-4 top-6 -ml-1.5 h-3 w-3 rounded-full bg-brand ring-4 ring-background md:left-1/2 md:-ml-1.5" />
-                  <div className={`ml-10 md:ml-0 ${i % 2 ? "md:pl-8" : "md:pr-8 md:text-right"}`}>
+                  <div
+                    className={`ml-10 md:ml-0 ${
+                      i % 2 === 0
+                        ? "md:col-start-1 md:pr-8 md:text-right"
+                        : "md:col-start-2 md:pl-8"
+                    }`}
+                  >
                     <div className="glass rounded-2xl p-5 transition-transform hover:-translate-y-1">
-                      <div className={`flex flex-wrap items-center gap-2 ${i % 2 ? "" : "md:justify-end"}`}>
+                      <div className={`flex flex-wrap items-center gap-2 ${i % 2 === 0 ? "md:justify-end" : ""}`}>
                         <span className="inline-flex items-center gap-1 rounded-full bg-brand/15 px-3 py-1 text-xs font-medium text-brand">
                           <Calendar className="h-3 w-3" /> {w.duration}
                         </span>
@@ -505,9 +526,9 @@ function Works() {
                       <p className="mt-0.5 text-sm">
                         <span className="text-brand">{w.company}</span>
                       </p>
-                      <ul className={`mt-4 space-y-2 text-sm text-muted-foreground ${i % 2 ? "" : "md:text-right"}`}>
+                      <ul className={`mt-4 space-y-2 text-sm text-muted-foreground ${i % 2 === 0 ? "md:text-right" : ""}`}>
                         {w.highlights.map((h) => (
-                          <li key={h} className={`flex gap-2 ${i % 2 ? "" : "md:flex-row-reverse"}`}>
+                          <li key={h} className={`flex gap-2 ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                             <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
                             <span>{h}</span>
                           </li>
@@ -681,6 +702,11 @@ function Education() {
                 <h3 className="mt-3 font-display text-xl font-semibold text-brand-3">{e.title}</h3>
                 <p className="text-sm text-foreground/80">{e.subtitle}</p>
                 {e.org && <p className="mt-1 text-sm text-muted-foreground">{e.org}</p>}
+                {e.location && (
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    <MapPin className="mr-1 inline h-3 w-3 text-brand" /> {e.location}
+                  </p>
+                )}
               </div>
             </Reveal>
           ))}
