@@ -548,10 +548,10 @@ function Projects() {
                   </div>
                   <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                   <div className="relative mt-6 flex gap-2">
-                    <a href={p.github} className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs hover:text-brand">
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs hover:text-brand">
                       <Github className="h-3.5 w-3.5" /> GitHub
                     </a>
-                    <a href={p.demo} className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
+                    <a href={p.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
                       Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
                   </div>
