@@ -724,17 +724,29 @@ function Contact() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
+    const form = formRef.current;
+    const fd = new FormData(form);
+    const templateParams = {
+      from_name: String(fd.get("name") ?? ""),
+      from_email: String(fd.get("email") ?? ""),
+      subject: String(fd.get("subject") ?? ""),
+      message: String(fd.get("message") ?? ""),
+    };
     setStatus("sending");
+    const loadingId = toast.loading("Sending your message…");
     try {
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current);
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
       setStatus("sent");
-      formRef.current.reset();
+      form.reset();
+      toast.success("Message sent!", { id: loadingId, description: "Thanks for reaching out — I'll reply soon." });
     } catch (err) {
       console.error("EmailJS error:", err);
       setStatus("error");
+      toast.error("Failed to send", { id: loadingId, description: "Please try again or email me directly." });
     }
     setTimeout(() => setStatus("idle"), 4000);
   };
+
 
   return (
     <section id="contact" className="relative py-24">
