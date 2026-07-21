@@ -7,7 +7,7 @@ import {
   FileText, ArrowUpRight, Sparkles, Trophy, Rocket, Calendar,
   CheckCircle2, Menu, X,
 } from "lucide-react";
-import profileImg from "@/assets/shikha-profile.jpg";
+import profileAsset from "@/assets/shikha-profile.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
