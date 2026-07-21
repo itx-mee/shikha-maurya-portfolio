@@ -731,14 +731,16 @@ function Contact() {
                 {[
                   { icon: Phone, label: "Phone", value: LINKS.phone, href: `tel:${LINKS.phone}` },
                   { icon: Mail, label: "Email", value: LINKS.email, href: `mailto:${LINKS.email}` },
-                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha-maurya-25754322b", href: LINKS.linkedin },
-                  { icon: Github, label: "GitHub", value: "github.com/itx-mee", href: LINKS.github },
-                  { icon: Code2, label: "LeetCode", value: "leetcode.com/u/shikha-maurya", href: LINKS.leetcode },
+                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha-maurya-25754322b", href: LINKS.linkedin, target: "_blank", rel: "noopener noreferrer" },
+                  { icon: Github, label: "GitHub", value: "github.com/itx-mee", href: LINKS.github, target: "_blank", rel: "noopener noreferrer" },
+                  { icon: Code2, label: "LeetCode", value: "leetcode.com/u/shikha-maurya", href: LINKS.leetcode, target: "_blank", rel: "noopener noreferrer" },
                   { icon: MapPin, label: "Location", value: LINKS.location, href: "#" },
                 ].map((c) => (
                   <a
                     key={c.label}
                     href={c.href}
+                    target={c.target}
+                    rel={c.rel}
                     className="group flex items-center gap-3 rounded-xl border border-foreground/5 bg-foreground/[0.02] p-3 transition-colors hover:border-brand/40"
                   >
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-2 text-primary-foreground">
