@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, useRef, type FormEvent } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
 import {
   Github, Linkedin, Mail, Phone, MapPin, Download, Send, ExternalLink,
   Moon, Sun, Code2, Briefcase, GraduationCap, Award, User, Wrench,
