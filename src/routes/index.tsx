@@ -7,7 +7,7 @@ import {
   FileText, ArrowUpRight, Sparkles, Trophy, Rocket, Calendar,
   CheckCircle2, Menu, X,
 } from "lucide-react";
-import profileImg from "@/assets/shikha-profile.jpg";
+import profileAsset from "@/assets/shikha-profile.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -25,13 +25,13 @@ export const Route = createFileRoute("/")({
 
 // ---------- Data ----------
 const LINKS = {
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
-  leetcode: "https://leetcode.com/",
-  email: "shikha.maurya@example.com",
-  phone: "+91 00000 00000",
+  github: "https://github.com/itx-mee",
+  linkedin: "https://www.linkedin.com/in/shikha-maurya-25754322b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  leetcode: "https://leetcode.com/u/shikha-maurya/",
+  email: "mauryashikha903@gmail.com",
+  phone: "+91 6390723007",
   location: "India",
-  resume: "#",
+  resume: "https://drive.google.com/file/d/1BgyNA82iJRctSHBCdbJ6NXRhRxrT5SHJ/view?usp=drive_link",
 };
 
 const NAV = [
@@ -87,7 +87,7 @@ const PROJECTS = [
     description:
       "A modern full-stack blogging platform with secure authentication, protected routes, CRUD functionality, rich text editing, image uploads, and responsive UI.",
     tech: ["React.js", "Redux Toolkit", "Appwrite", "React Router", "Tailwind CSS"],
-    github: "#",
+    github: "https://github.com/itx-mee/React-Projects/tree/main/12_blogApp",
     demo: "#",
     gradient: "from-orange-500/30 via-fuchsia-500/20 to-indigo-500/30",
   },
@@ -388,6 +388,8 @@ function Hero() {
               </a>
               <a
                 href={LINKS.resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition-transform hover:-translate-y-0.5"
               >
                 <Download className="h-4 w-4" /> Download Resume
@@ -397,9 +399,9 @@ function Hero() {
           <Reveal delay={0.25}>
             <div className="mt-8 flex flex-wrap items-center gap-2">
               {[
-                { icon: Github, href: LINKS.github, label: "GitHub" },
-                { icon: Linkedin, href: LINKS.linkedin, label: "LinkedIn" },
-                { icon: Code2, href: LINKS.leetcode, label: "LeetCode" },
+                { icon: Github, href: LINKS.github, label: "GitHub", external: true },
+                { icon: Linkedin, href: LINKS.linkedin, label: "LinkedIn", external: true },
+                { icon: Code2, href: LINKS.leetcode, label: "LeetCode", external: true },
                 { icon: Mail, href: `mailto:${LINKS.email}`, label: "Email" },
                 { icon: Phone, href: `tel:${LINKS.phone}`, label: "Phone" },
               ].map((s) => (
@@ -407,6 +409,8 @@ function Hero() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target={s.external ? "_blank" : undefined}
+                  rel={s.external ? "noopener noreferrer" : undefined}
                   className="group grid h-10 w-10 place-items-center rounded-xl glass transition-transform hover:-translate-y-0.5 hover:text-brand"
                 >
                   <s.icon className="h-4 w-4" />
@@ -429,7 +433,7 @@ function Hero() {
               <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand/50 via-brand-2/40 to-brand-3/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] glass p-2">
                 <img
-                  src={profileImg}
+                  src={profileAsset.url}
                   alt="Shikha Maurya"
                   width={1024}
                   height={1024}
@@ -529,10 +533,10 @@ function Projects() {
                   <div className="relative flex items-start justify-between gap-3">
                     <h3 className="font-display text-xl font-semibold">{p.title}</h3>
                     <div className="flex gap-2">
-                      <a href={p.github} aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                      <a href={p.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <Github className="h-4 w-4" />
                       </a>
-                      <a href={p.demo} aria-label="Live demo" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                      <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <ExternalLink className="h-4 w-4" />
                       </a>
                     </div>
@@ -546,10 +550,10 @@ function Projects() {
                   </div>
                   <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                   <div className="relative mt-6 flex gap-2">
-                    <a href={p.github} className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs hover:text-brand">
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs hover:text-brand">
                       <Github className="h-3.5 w-3.5" /> GitHub
                     </a>
-                    <a href={p.demo} className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
+                    <a href={p.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
                       Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
                   </div>
@@ -568,6 +572,8 @@ function Projects() {
                 </p>
                 <a
                   href={LINKS.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-medium hover:text-brand"
                 >
                   <Github className="h-4 w-4" /> Visit GitHub
@@ -727,14 +733,16 @@ function Contact() {
                 {[
                   { icon: Phone, label: "Phone", value: LINKS.phone, href: `tel:${LINKS.phone}` },
                   { icon: Mail, label: "Email", value: LINKS.email, href: `mailto:${LINKS.email}` },
-                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha", href: LINKS.linkedin },
-                  { icon: Github, label: "GitHub", value: "github.com/shikha", href: LINKS.github },
-                  { icon: Code2, label: "LeetCode", value: "leetcode.com/shikha", href: LINKS.leetcode },
+                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha-maurya-25754322b", href: LINKS.linkedin, target: "_blank", rel: "noopener noreferrer" },
+                  { icon: Github, label: "GitHub", value: "github.com/itx-mee", href: LINKS.github, target: "_blank", rel: "noopener noreferrer" },
+                  { icon: Code2, label: "LeetCode", value: "leetcode.com/u/shikha-maurya", href: LINKS.leetcode, target: "_blank", rel: "noopener noreferrer" },
                   { icon: MapPin, label: "Location", value: LINKS.location, href: "#" },
                 ].map((c) => (
                   <a
                     key={c.label}
                     href={c.href}
+                    target={c.target}
+                    rel={c.rel}
                     className="group flex items-center gap-3 rounded-xl border border-foreground/5 bg-foreground/[0.02] p-3 transition-colors hover:border-brand/40"
                   >
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand to-brand-2 text-primary-foreground">
@@ -838,12 +846,16 @@ function Resume() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
                     href={LINKS.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand to-brand-2 px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-lg shadow-brand/30"
                   >
                     <Download className="h-4 w-4" /> Download Resume
                   </a>
                   <a
                     href={LINKS.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium"
                   >
                     <ExternalLink className="h-4 w-4" /> Open PDF
@@ -881,10 +893,10 @@ function Footer() {
           Built with <span className="text-brand">♥</span> using React · TanStack · Tailwind CSS · Motion
         </p>
         <div className="flex gap-2">
-          <a href={LINKS.github} aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
+          <a href={LINKS.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
             <Github className="h-4 w-4" />
           </a>
-          <a href={LINKS.linkedin} aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
+          <a href={LINKS.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
             <Linkedin className="h-4 w-4" />
           </a>
           <a href={`mailto:${LINKS.email}`} aria-label="Email" className="grid h-9 w-9 place-items-center rounded-full glass hover:text-brand">
