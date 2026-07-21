@@ -727,9 +727,9 @@ function Contact() {
                 {[
                   { icon: Phone, label: "Phone", value: LINKS.phone, href: `tel:${LINKS.phone}` },
                   { icon: Mail, label: "Email", value: LINKS.email, href: `mailto:${LINKS.email}` },
-                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha", href: LINKS.linkedin },
-                  { icon: Github, label: "GitHub", value: "github.com/shikha", href: LINKS.github },
-                  { icon: Code2, label: "LeetCode", value: "leetcode.com/shikha", href: LINKS.leetcode },
+                  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/shikha-maurya-25754322b", href: LINKS.linkedin },
+                  { icon: Github, label: "GitHub", value: "github.com/itx-mee", href: LINKS.github },
+                  { icon: Code2, label: "LeetCode", value: "leetcode.com/u/shikha-maurya", href: LINKS.leetcode },
                   { icon: MapPin, label: "Location", value: LINKS.location, href: "#" },
                 ].map((c) => (
                   <a
