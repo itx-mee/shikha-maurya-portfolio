@@ -10,7 +10,7 @@ import {
   FileText, ArrowUpRight, Sparkles, Trophy, Rocket, Calendar,
   CheckCircle2, Menu, X, AlertCircle,
 } from "lucide-react";
-import profileAsset from "@/assets/shikha-profile.png.asset.json";
+const profileAsset = { url: "/shikha-profile.png" };
 
 // EmailJS configuration (public credentials — safe in client bundle)
 const EMAILJS_PUBLIC_KEY = "1TGrJ4Mi9e4ijmPwY";
