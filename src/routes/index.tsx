@@ -41,7 +41,7 @@ const LINKS = {
   email: "mauryashikha903@gmail.com",
   phone: "+91 6390723007",
   location: "India",
-  resume: "https://drive.google.com/file/d/1BgyNA82iJRctSHBCdbJ6NXRhRxrT5SHJ/view?usp=drive_link",
+  resume: "https://drive.google.com/file/d/1FXtKfBFeD77NEqtLk9EhqyqclDFZkyZS/view",
 };
 
 const NAV = [
