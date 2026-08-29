@@ -590,9 +590,11 @@ function Projects() {
                       <a href={p.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <Github className="h-4 w-4" />
                       </a>
-                      <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
+                      {!p.hideLive && (
+                        <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="relative mt-4 flex flex-wrap gap-1.5">
