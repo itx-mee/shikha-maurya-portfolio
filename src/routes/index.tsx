@@ -23,11 +23,11 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
   head: () => ({
     meta: [
-      { title: "Shikha Maurya — RPA Consultant & Automation Engineer" },
+      { title: "Shikha Maurya" },
       {
         name: "description",
         content:
-          "Robotic Process Automation Consultant · UiPath Developer · API Integration Specialist. Enterprise automation, OPERA Cloud migrations, and production-grade automation.",
+          "Robotic Process Automation Developer · UiPath Developer · API Integration Specialist. Enterprise automation, OPERA Cloud migrations, and production-grade automation.",
       },
     ],
   }),
@@ -41,7 +41,7 @@ const LINKS = {
   email: "mauryashikha903@gmail.com",
   phone: "+91 6390723007",
   location: "India",
-  resume: "https://drive.google.com/file/d/1FXtKfBFeD77NEqtLk9EhqyqclDFZkyZS/view",
+  resume: "https://drive.google.com/file/d/1TkxZ9Nr0G9f8P3RsA8QKd8NZgQBmYTcG/view?usp=sharing",
 };
 
 const NAV = [
@@ -100,6 +100,22 @@ const PROJECTS = [
     github: "https://github.com/itx-mee/React-Projects/tree/main/12_blogApp",
     demo: "#",
     gradient: "from-orange-500/30 via-fuchsia-500/20 to-indigo-500/30",
+  },
+  {
+    title: "Parking Lot LLD",
+    description:
+      "Developed an OOP CLI system managing three vehicle types with thread-safe concurrent operations and dynamic billing.",
+    tech: ["C++", "OOP", "Multithreading", "CLI"],
+    github: "https://github.com/itx-mee/Parking_Lot_LLD",
+    demo: "#",
+    gradient: "from-emerald-500/30 via-teal-500/20 to-cyan-500/30",
+    features: [
+      "Supports three vehicle types with dedicated parking-slot allocation",
+      "Thread-safe concurrent entry/exit operations using synchronization primitives",
+      "Dynamic billing engine that calculates fare based on duration and vehicle type",
+      "Clean OOP design with extensible classes for future vehicle categories",
+      "Interactive CLI for real-time check-in, checkout, and slot-status queries",
+    ],
   },
 ];
 
@@ -580,13 +596,25 @@ function Projects() {
                     ))}
                   </div>
                   <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-                  <div className="relative mt-6 flex gap-2">
+                  {p.features && (
+                    <ul className="relative mt-4 space-y-2 text-sm text-muted-foreground">
+                      {p.features.map((f) => (
+                        <li key={f} className="flex gap-2">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="relative mt-6 flex flex-wrap gap-2">
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs hover:text-brand">
                       <Github className="h-3.5 w-3.5" /> GitHub
                     </a>
-                    <a href={p.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
-                      Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
+                    {p.demo !== "#" && (
+                      <a href={p.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2 px-3 py-1.5 text-xs font-medium text-primary-foreground">
+                        Live Demo <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </TiltCard>
