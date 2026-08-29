@@ -93,13 +93,19 @@ const WORKS = [
 
 const PROJECTS = [
   {
-    title: "Bloggist — Blog Management Platform",
+    title: "BloomBlog — Blog Management Platform",
     description:
-      "A modern full-stack blogging platform with secure authentication, protected routes, CRUD functionality, rich text editing, image uploads, and responsive UI.",
-    tech: ["React.js", "Redux Toolkit", "Appwrite", "React Router", "Tailwind CSS"],
+      "A full-stack blog platform with secure authentication, protected routes, and complete CRUD functionality for modern content publishing.",
+    tech: ["React.js", "Redux Toolkit", "Appwrite", "React Router", "Tailwind CSS", "TinyMCE"],
     github: "https://github.com/itx-mee/React-Projects/tree/main/12_blogApp",
     demo: "#",
     gradient: "from-orange-500/30 via-fuchsia-500/20 to-indigo-500/30",
+    features: [
+      "Developed a full-stack blog platform with secure authentication, protected routes, and CRUD functionality.",
+      "Managed application state using Redux Toolkit and implemented client-side routing with React Router.",
+      "Integrated Appwrite for authentication, database operations, and image storage.",
+      "Built a rich text editing experience with TinyMCE and a responsive Tailwind CSS interface.",
+    ],
   },
   {
     title: "Parking Lot LLD",
@@ -108,6 +114,7 @@ const PROJECTS = [
     tech: ["C++", "OOP", "Multithreading", "CLI"],
     github: "https://github.com/itx-mee/Parking_Lot_LLD",
     demo: "#",
+    hideLive: true,
     gradient: "from-emerald-500/30 via-teal-500/20 to-cyan-500/30",
     features: [
       "Supports three vehicle types with dedicated parking-slot allocation",
@@ -583,9 +590,11 @@ function Projects() {
                       <a href={p.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
                         <Github className="h-4 w-4" />
                       </a>
-                      <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
+                      {!p.hideLive && (
+                        <a href={p.demo} aria-label="Live demo" target="_blank" rel="noopener noreferrer" className="grid h-9 w-9 place-items-center rounded-full glass transition-colors hover:text-brand">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="relative mt-4 flex flex-wrap gap-1.5">
