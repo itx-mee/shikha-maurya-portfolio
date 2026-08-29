@@ -127,11 +127,11 @@ const PROJECTS = [
 ];
 
 const TOOLS = [
-  { group: "Languages", items: ["C", "C++", "JavaScript", "VB.NET", "HTML", "CSS"] },
+  { group: "Languages", items: ["C", "C++", "Java", "JavaScript", "VB.NET", "HTML", "CSS"] },
   { group: "Frontend", items: ["React", "Tailwind CSS", "Redux Toolkit"] },
   { group: "Backend", items: ["Node.js", "REST APIs"] },
-  { group: "Automation", items: ["UiPath", "Postman", "Azure DevOps", "Git", "GitHub", "Kibana"] },
-  { group: "Core Knowledge", items: ["OOPS", "DSA", "Operating Systems", "Computer Networks", "DBMS"] },
+  { group: "Automation", items: ["UiPath", "Postman", "Azure DevOps", "Git", "GitHub"] },
+  { group: "Core Knowledge", items: ["OOPS", "DSA", "LLD", "HLD", "Computer Networks", "DBMS"] },
 ];
 
 const EDUCATION = [
