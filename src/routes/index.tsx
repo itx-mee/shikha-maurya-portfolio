@@ -98,7 +98,7 @@ const PROJECTS = [
       "A full-stack blog platform with secure authentication, protected routes, and complete CRUD functionality for modern content publishing.",
     tech: ["React.js", "Redux Toolkit", "Appwrite", "React Router", "Tailwind CSS", "TinyMCE"],
     github: "https://github.com/itx-mee/React-Projects/tree/main/12_blogApp",
-    demo: "#",
+    demo: "https://blooomblog.netlify.app/",
     gradient: "from-orange-500/30 via-fuchsia-500/20 to-indigo-500/30",
     features: [
       "Developed a full-stack blog platform with secure authentication, protected routes, and CRUD functionality.",
@@ -110,15 +110,15 @@ const PROJECTS = [
   {
     title: "Parking Lot LLD",
     description:
-      "Developed an OOP CLI system managing three vehicle types with thread-safe concurrent operations and dynamic billing.",
-    tech: ["C++", "OOP", "Multithreading", "CLI"],
+      "Developed an OOP CLI system in Java managing three vehicle types with thread-safe concurrent operations and dynamic billing.",
+    tech: ["Java", "OOP", "Concurrency", "Multithreading", "CLI"],
     github: "https://github.com/itx-mee/Parking_Lot_LLD",
     demo: "#",
     hideLive: true,
     gradient: "from-emerald-500/30 via-teal-500/20 to-cyan-500/30",
     features: [
       "Supports three vehicle types with dedicated parking-slot allocation",
-      "Thread-safe concurrent entry/exit operations using synchronization primitives",
+      "Thread-safe concurrent entry/exit operations using Java concurrency primitives",
       "Dynamic billing engine that calculates fare based on duration and vehicle type",
       "Clean OOP design with extensible classes for future vehicle categories",
       "Interactive CLI for real-time check-in, checkout, and slot-status queries",
@@ -127,11 +127,11 @@ const PROJECTS = [
 ];
 
 const TOOLS = [
-  { group: "Languages", items: ["C", "C++", "JavaScript", "VB.NET", "HTML", "CSS"] },
+  { group: "Languages", items: ["C", "C++", "Java", "JavaScript", "VB.NET", "HTML", "CSS"] },
   { group: "Frontend", items: ["React", "Tailwind CSS", "Redux Toolkit"] },
   { group: "Backend", items: ["Node.js", "REST APIs"] },
-  { group: "Automation", items: ["UiPath", "Postman", "Azure DevOps", "Git", "GitHub", "Kibana"] },
-  { group: "Core Knowledge", items: ["OOPS", "DSA", "Operating Systems", "Computer Networks", "DBMS"] },
+  { group: "Automation", items: ["UiPath", "Postman", "Azure DevOps", "Git", "GitHub"] },
+  { group: "Core Knowledge", items: ["OOPS", "DSA", "LLD", "HLD", "Computer Networks", "DBMS"] },
 ];
 
 const EDUCATION = [
